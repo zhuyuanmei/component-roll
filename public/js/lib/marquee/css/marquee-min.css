@@ -1,0 +1,10 @@
+@charset "utf-8";
+body{background:#00b0ff;}
+header{background:#00b0ff;color:#fff;text-align:center;}
+.prize-container{position:relative;}
+.prize{position:absolute;top:0;left:0;width:100%;z-index:5;background:#fff;opacity:0.5;}
+.prize ul{overflow:hidden;width:60%;height:75px;margin:0 auto;}
+.prize li{height:25px;line-height:25px;}
+.prize li span{font-size:15px;display:inline-block;font-weight:bold;}
+.prize li span:nth-child(2n-1){width:60%;}
+.prize li span:nth-child(2n){text-align:right;width:40%;}
