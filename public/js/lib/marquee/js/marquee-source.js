@@ -41,6 +41,7 @@ define(function(require, exports, module) {
 
             liOuterH = _this.settings.li.height();
             liMargin = Math.max(parseInt(_this.settings.li.css('margin-top'), 10), parseInt(_this.settings.li.css('margin-bottom'), 10));
+
             wrapH = _this.settings.showNum * liOuterH - liMargin;
             ulH = 9999;
             floatStyle = 'none';
@@ -55,16 +56,15 @@ define(function(require, exports, module) {
 
             _this.settings.wrap.css({
                 position: 'absolute',
-                width: '100%',
                 height: wrapH,
-                margin: '0 auto',
                 overflow: 'hidden'
             });
 
             _this.settings.ul.css({
                 position: 'relative',
                 height: ulH,
-                top: 0
+                top: 0,
+                overflow: 'hidden'
             });
 
             _this.settings.li.css({
@@ -121,7 +121,7 @@ define(function(require, exports, module) {
                 preEls = ul.children().slice(0, _this.settings.stepLen);
                 preEls.clone().appendTo(ul);
 
-                ul.animate(_this.cache.prevAnimateObj, _this.settings.speed, function() {
+                ul.animate(_this.cache.prevAnimateObj, _this.settings.speed,function() {
                     ul.css(_this.cache.leftOrTop, 0);
                     preEls.remove();
                     //_this.cache.moveAfter.call(_this);
